@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
-import './nav.css';
+import { Link } from 'react-router-dom';
+import Auth from "../../utils/auth";
 
 export default function Nav() {
     const styles = {
@@ -17,6 +16,7 @@ export default function Nav() {
         },
         title: {
             color: 'white',
+            fontFamily: "tahoma cursive",
         },
         nav: {
             color: 'white',
@@ -24,40 +24,33 @@ export default function Nav() {
         }
     }
 
-    const location = useLocation()
-    const currentPath = location.pathname
-
-    const homePath = '/'
-    const loginPath = '/login'
-    const signupPath = '/signup'
-    const aboutPath = '/about'
-    const [showNav, setShowNav] = useState(false)
-
-    useEffect(() => {
-        if (currentPath === homePath || currentPath === loginPath || currentPath === signupPath || currentPath === aboutPath) {
-            setShowNav(true)
-        } else {
-            setShowNav(false)
-        }
-    }, [currentPath])
+    const logout = (event) => {
+        event.preventDefault();
+        Auth.logout();
+    };
 
     return (
         <div>
-            {showNav ?
-                <nav style={styles.header}>
-                    <h2 style={styles.title}>Green Dough</h2>
+            <nav style={styles.header}>
+                <h2 style={styles.title}>Green Dough</h2>
 
-                    <ul className="nav">
-                        <Link to='/'><li className="nav-item" style={styles.nav}>Home</li></Link>
-                        <Link to='/about'><li className="nav-item" style={styles.nav}>About</li></Link>
-                        <Link to='/login'><li className="nav-item" style={styles.nav}>Login</li></Link>
-                        <Link to='/signup'><li className="nav-item" style={styles.nav}>Signup</li></Link>
-                    </ul>
-                </nav>
-                :
-                null
-            }
-
+                <ul className="nav">
+                    {Auth.loggedIn() ? (
+                        <>
+                            <Link to='/'><li className="nav-item" style={styles.nav}>Home</li></Link>
+                            <Link to='/about'><li className="nav-item" style={styles.nav}>About</li></Link>
+                            <button className="nav-item" style={styles.nav} onClick={logout}>Logout</button>
+                        </>
+                    ) : (
+                        <>
+                            <Link to='/'><li className="nav-item" style={styles.nav}>Home</li></Link>
+                            <Link to='/about'><li className="nav-item" style={styles.nav}>About</li></Link>
+                            <Link to='/login'><li className="nav-item" style={styles.nav}>Login</li></Link>
+                            <Link to='/signup'><li className="nav-item" style={styles.nav}>Signup</li></Link>
+                        </>
+                    )}
+                </ul>
+            </nav>
         </div>
     )
 }
