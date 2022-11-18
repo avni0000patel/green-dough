@@ -2,7 +2,7 @@
     min-height: 100vh;
 }
 
-.homeContainer {
+.home {
     background: linear-gradient(90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%);
     border-radius: 2.5rem;
     box-shadow: 15px 15px 15px rgba(46, 54, 68, 0.4);

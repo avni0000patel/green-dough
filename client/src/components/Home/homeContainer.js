@@ -1,6 +1,6 @@
 import Background from './background';
-import Nav from './nav'
-import Home from './home'
+import Nav from './nav';
+import Home from './home';
 import './homeContainer.css';
 
 export default function HomeContainer() {
@@ -8,7 +8,7 @@ export default function HomeContainer() {
         <div className="all">
             <Background />
             <Nav />
-            <div className="homeContainer">
+            <div className="home">
                 <Home />
             </div >
         </div>
