@@ -1,4 +1,3 @@
-// see SignupForm.js for comments
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
@@ -9,7 +8,10 @@ import { LOGIN_USER } from '../../utils/mutations';
 const LoginForm = () => {
     const styles = {
         login: {
-            padding: '2rem 2rem'
+            padding: '2rem 2rem',
+        },
+        label: {
+            color: 'white',
         },
         button: {
             color: 'white',
@@ -62,7 +64,7 @@ const LoginForm = () => {
                     Something went wrong with your login credentials!
                 </Alert>
                 <Form.Group>
-                    <Form.Label htmlFor='email'>Email</Form.Label>
+                    <Form.Label style={styles.label} htmlFor='email'>Email</Form.Label>
                     <Form.Control
                         type='text'
                         placeholder='Your email'
@@ -75,7 +77,7 @@ const LoginForm = () => {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label htmlFor='password'>Password</Form.Label>
+                    <Form.Label style={styles.label} htmlFor='password'>Password</Form.Label>
                     <Form.Control
                         type='password'
                         placeholder='Your password'
