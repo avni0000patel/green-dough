@@ -9,10 +9,7 @@ export default function Home() {
             boxShadow: '15px 15px 15px rgba(46, 54, 68, 0.4)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
             padding: '5rem 1rem',
-            margin: '3rem',
         },
         hero: {
             display: 'flex',
