@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-// import { createUser } from '../utils/API';
 import Auth from '../../utils/auth';
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
@@ -9,7 +8,10 @@ import { ADD_USER } from "../../utils/mutations";
 const SignupForm = () => {
     const styles = {
         signup: {
-            padding: '2rem 2rem'
+            padding: '2rem 2rem',
+        },
+        label: {
+            color: 'white',
         },
         button: {
             color: 'white',
@@ -67,7 +69,7 @@ const SignupForm = () => {
                 </Alert>
 
                 <Form.Group>
-                    <Form.Label htmlFor='username'>Username</Form.Label>
+                    <Form.Label style={styles.label} htmlFor='username'>Username</Form.Label>
                     <Form.Control
                         type='text'
                         placeholder='Your username'
@@ -80,7 +82,7 @@ const SignupForm = () => {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label htmlFor='email'>Email</Form.Label>
+                    <Form.Label style={styles.label} htmlFor='email'>Email</Form.Label>
                     <Form.Control
                         type='email'
                         placeholder='Your email address'
@@ -93,7 +95,7 @@ const SignupForm = () => {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label htmlFor='password'>Password</Form.Label>
+                    <Form.Label style={styles.label} htmlFor='password'>Password</Form.Label>
                     <Form.Control
                         type='password'
                         placeholder='Your password'
