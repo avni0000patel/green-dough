@@ -5,14 +5,15 @@ import './nav.css';
 export default function Nav() {
     const styles = {
         header: {
-            background: 'linear-gradient(90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%) ',
-            position: 'fixed',
+            // background: 'linear-gradient(90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%) ',
+            // position: 'fixed',
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             top: '0',
             width: '100%',
             zIndex: '1',
+            padding: '1rem 1rem',
         },
         title: {
             color: 'white',
