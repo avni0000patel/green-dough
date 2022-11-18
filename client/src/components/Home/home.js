@@ -42,8 +42,9 @@ export default function Home() {
                 <img className="heroImg rounded-circle img-thumbnail" style={styles.heroImg} src={hero} alt="sending money" />
             </div >
             <div className="description col-12 col-md-8" style={styles.description}>
-                <h1>Send and Receive Money with <span className="green" style={styles.green}>Green Dough</span></h1>
-                <h4>We are a user-friendly, secure, and fast platform!</h4>
+                <h1>Send and Receive Money
+                    <br /> with <span className="green" style={styles.green}><strong>Green Dough</strong></span></h1>
+                <h4>We are user-friendly, secure, and fast!</h4>
                 <Link to='/signup' className="btnLink"><button className="signupBtn btn btn-block py-3" style={styles.signupBtn}>Signup</button></Link>
             </div>
         </div >

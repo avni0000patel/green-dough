@@ -16,7 +16,8 @@ export default function Nav() {
         },
         title: {
             color: 'white',
-            fontFamily: "tahoma cursive",
+            fontWeight: 'bolder',
+            fontFamily: 'Dancing Script, cursive',
         },
         nav: {
             color: 'white',
