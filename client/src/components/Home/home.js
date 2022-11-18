@@ -29,6 +29,9 @@ export default function Home() {
         description: {
             color: 'white',
         },
+        green: {
+            color: 'green'
+        },
         signupBtn: {
             color: '#5d0cff',
             background: 'white',
@@ -37,15 +40,15 @@ export default function Home() {
         },
     }
     return (
-        <div className="container" style={styles.container}>
-            <div className="hero float-start" style={styles.hero}>
+        <div className="container flex-row justify-center" style={styles.container}>
+            < div className="hero col-12 col-md-4" style={styles.hero} >
                 <img className="heroImg rounded-circle img-thumbnail" style={styles.heroImg} src={hero} alt="sending money" />
-            </div>
-            <div className="description" style={styles.description}>
-                <h1>Send and Receive Money with Green Dough</h1>
+            </div >
+            <div className="description col-12 col-md-8" style={styles.description}>
+                <h1>Send and Receive Money with <span className="green" style={styles.green}>Green Dough</span></h1>
                 <h4>We are a user-friendly, secure, and fast platform!</h4>
+                <Link to='/signup' className="btnLink"><button className="signupBtn btn btn-block py-3" style={styles.signupBtn}>Signup</button></Link>
             </div>
-            <Link to='/signup' className="btnLink"><button className="signupBtn btn btn-block py-3" style={styles.signupBtn}>Signup</button></Link>
-        </div>
+        </div >
     )
 }
