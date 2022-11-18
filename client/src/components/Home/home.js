@@ -10,6 +10,7 @@ export default function Home() {
             display: 'flex',
             alignItems: 'center',
             padding: '5rem 1rem',
+            marginBottom: '20px',
         },
         hero: {
             display: 'flex',
