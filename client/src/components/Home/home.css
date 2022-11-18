@@ -1,3 +1,17 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin: 1rem;
+    overflow: hidden;
+}
+
+.heroImg {
+    width: 300px;
+    object-fit: contain;
+    height: 300px;
+}
+
 .description {
     color: white;
 }
