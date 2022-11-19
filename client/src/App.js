@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Background from './components/Home/background';
 import Nav from './components/Home/nav';
 import Home from './components/Home/home';
+import About from './components/Home/about';
 import Signup from './components/Home/signup';
 import Login from './components/Home/login';
 
@@ -49,6 +50,10 @@ function App() {
           <Route
             path="/"
             element={<Home />}
+          />
+          <Route
+            path="/about"
+            element={<About />}
           />
           <Route
             path="/signup"

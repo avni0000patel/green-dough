@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import hero from '../../assets/hero.png';
+import userfriendly from '../../assets/userfriendly.png';
+import secure from '../../assets/secure.png';
+import fast from '../../assets/fast.png';
 
 export default function Home() {
     const styles = {
@@ -9,7 +12,7 @@ export default function Home() {
             boxShadow: '15px 15px 15px rgba(46, 54, 68, 0.4)',
             display: 'flex',
             alignItems: 'center',
-            padding: '5rem 1rem',
+            padding: '5rem 3rem',
             marginBottom: '20px',
         },
         hero: {
@@ -19,7 +22,7 @@ export default function Home() {
             margin: '1rem',
             overflow: 'hidden',
         },
-        heroImg: {
+        homeImg: {
             width: '300px',
             objectFit: 'contain',
             height: '300px',
@@ -38,16 +41,41 @@ export default function Home() {
         },
     }
     return (
-        <div className="container flex-row justify-center" style={styles.container}>
-            < div className="hero col-12 col-md-4" style={styles.hero} >
-                <img className="heroImg rounded-circle img-thumbnail" style={styles.heroImg} src={hero} alt="sending money" />
+        <div>
+            <div className="container flex-row justify-center" style={styles.container}>
+                < div className="hero col-12 col-md-4" style={styles.hero} >
+                    <img className="homeImg rounded-circle img-thumbnail" style={styles.homeImg} src={hero} alt="sending money" />
+                </div >
+                <div className="description col-12 col-md-8" style={styles.description}>
+                    <h1>Send and Receive Money with <span className="green" style={styles.green}><strong>Green Dough</strong></span></h1>
+                    <Link to='/signup' className="btnLink"><button className="signupBtn btn btn-block py-3" style={styles.signupBtn}>Signup</button></Link>
+                </div>
             </div >
-            <div className="description col-12 col-md-8" style={styles.description}>
-                <h1>Send and Receive Money
-                    <br /> with <span className="green" style={styles.green}><strong>Green Dough</strong></span></h1>
-                <h4>We are user-friendly, secure, and fast!</h4>
-                <Link to='/signup' className="btnLink"><button className="signupBtn btn btn-block py-3" style={styles.signupBtn}>Signup</button></Link>
-            </div>
-        </div >
+            <div className="container flex-row justify-center" style={styles.container}>
+                <div className="description col-12 col-md-8" style={styles.description}>
+                    <h2>Userfriendly</h2>
+                </div>
+                < div className="hero col-12 col-md-4" style={styles.hero} >
+                    <img className="homeImg rounded-circle img-thumbnail" style={styles.homeImg} src={userfriendly} alt="sending money" />
+                </div >
+            </div >
+            <div className="container flex-row justify-center" style={styles.container}>
+                < div className="hero col-12 col-md-4" style={styles.hero} >
+                    <img className="homeImg rounded-circle img-thumbnail" style={styles.homeImg} src={secure} alt="sending money" />
+                </div >
+                <div className="description col-12 col-md-8" style={styles.description}>
+                    <h2>Secure</h2>
+                </div>
+            </div >
+            <div className="container flex-row justify-center" style={styles.container}>
+                <div className="description col-12 col-md-8" style={styles.description}>
+                    <h2>Fast</h2>
+                </div>
+                < div className="hero col-12 col-md-4" style={styles.hero} >
+                    <img className="homeImg rounded-circle img-thumbnail" style={styles.homeImg} src={fast} alt="sending money" />
+                </div >
+            </div >
+        </div>
+
     )
 }
