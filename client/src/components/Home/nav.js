@@ -4,8 +4,6 @@ import Auth from "../../utils/auth";
 export default function Nav() {
     const styles = {
         header: {
-            // background: 'linear-gradient(90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%) ',
-            // position: 'fixed',
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -17,7 +15,6 @@ export default function Nav() {
         title: {
             color: 'white',
             fontWeight: 'bolder',
-            fontFamily: 'Dancing Script, cursive',
         },
         nav: {
             color: 'white',

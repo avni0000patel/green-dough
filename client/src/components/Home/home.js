@@ -31,7 +31,13 @@ export default function Home() {
             color: 'white',
         },
         green: {
-            color: 'green'
+            color: 'green',
+        },
+        top: {
+
+        },
+        heading: {
+            color: '',
         },
         signupBtn: {
             color: '#5d0cff',
@@ -47,13 +53,16 @@ export default function Home() {
                     <img className="homeImg rounded-circle img-thumbnail" style={styles.homeImg} src={hero} alt="sending money" />
                 </div >
                 <div className="description col-12 col-md-8" style={styles.description}>
-                    <h1>Send and Receive Money with <span className="green" style={styles.green}><strong>Green Dough</strong></span></h1>
+                    <h1>Send and Receive Money with <span className="heading" style={styles.green}><strong>Green Dough</strong></span></h1>
                     <Link to='/signup' className="btnLink"><button className="signupBtn btn btn-block py-3" style={styles.signupBtn}>Signup</button></Link>
                 </div>
             </div >
             <div className="container flex-row justify-center" style={styles.container}>
                 <div className="description col-12 col-md-8" style={styles.description}>
-                    <h2>Userfriendly</h2>
+                    <div className="top" style={styles.top}>
+                        <h1 className="heading" style={styles.heading}><strong>Userfriendly</strong></h1>
+                    </div>
+                    <h4>We make money transfer easy with our userfriendly site.</h4>
                 </div>
                 < div className="hero col-12 col-md-4" style={styles.hero} >
                     <img className="homeImg rounded-circle img-thumbnail" style={styles.homeImg} src={userfriendly} alt="sending money" />
@@ -64,12 +73,18 @@ export default function Home() {
                     <img className="homeImg rounded-circle img-thumbnail" style={styles.homeImg} src={secure} alt="sending money" />
                 </div >
                 <div className="description col-12 col-md-8" style={styles.description}>
-                    <h2>Secure</h2>
+                    <div className="top" style={styles.top}>
+                        <h1 className="heading" style={styles.heading}><strong>Secure</strong></h1>
+                    </div>
+                    <h4>We make security our priority so you don't have to worry with our secure site.</h4>
                 </div>
             </div >
             <div className="container flex-row justify-center" style={styles.container}>
                 <div className="description col-12 col-md-8" style={styles.description}>
-                    <h2>Fast</h2>
+                    <div className="top" style={styles.top}>
+                        <h1 className="heading" style={styles.heading}><strong>Fast</strong></h1>
+                    </div>
+                    <h4>We make sure money is transfed almost immediately and at any time with our fast site.</h4>
                 </div>
                 < div className="hero col-12 col-md-4" style={styles.hero} >
                     <img className="homeImg rounded-circle img-thumbnail" style={styles.homeImg} src={fast} alt="sending money" />
