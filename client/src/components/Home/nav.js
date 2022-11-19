@@ -35,7 +35,7 @@ export default function Nav() {
                 <ul className="nav">
                     {Auth.loggedIn() ? (
                         <>
-                            <button className="nav-item" style={styles.nav} onClick={logout}>Logout</button>
+                            <li className="nav-item" style={styles.nav} onClick={logout}>Logout</li>
                         </>
                     ) : (
                         <>

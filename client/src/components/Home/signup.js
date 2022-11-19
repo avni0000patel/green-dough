@@ -5,7 +5,7 @@ import Auth from '../../utils/auth';
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
 
-const SignupForm = () => {
+const Signup = () => {
     const styles = {
         signup: {
             padding: '2rem 2rem',
@@ -118,4 +118,4 @@ const SignupForm = () => {
     );
 };
 
-export default SignupForm;
+export default Signup;

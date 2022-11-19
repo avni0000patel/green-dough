@@ -5,7 +5,7 @@ import Auth from '../../utils/auth';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 
-const LoginForm = () => {
+const Login = () => {
     const styles = {
         login: {
             padding: '2rem 2rem',
@@ -100,4 +100,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default Login;
