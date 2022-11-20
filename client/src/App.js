@@ -7,6 +7,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Background from './components/Home/background';
 import Nav from './components/Home/nav';
 import Home from './components/Home/home';
