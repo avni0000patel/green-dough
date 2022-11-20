@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Auth from "../../utils/auth";
 
 export default function Nav() {
     const styles = {
@@ -21,11 +20,6 @@ export default function Nav() {
             margin: '10px',
         }
     }
-
-    const logout = (event) => {
-        event.preventDefault();
-        Auth.logout();
-    };
 
     return (
         <div>
