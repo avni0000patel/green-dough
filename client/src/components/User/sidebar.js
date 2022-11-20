@@ -34,10 +34,7 @@ export default function Nav() {
 
                 <ul className="nav">
                     <>
-                        <Link to='/'><li className="nav-item" style={styles.nav}>Home</li></Link>
-                        <Link to='/about'><li className="nav-item" style={styles.nav}>About</li></Link>
-                        <Link to='/login'><li className="nav-item" style={styles.nav}>Login</li></Link>
-                        <Link to='/signup'><li className="nav-item" style={styles.nav}>Signup</li></Link>
+                        <li className="nav-item" style={styles.nav} onClick={logout}>Logout</li>
                     </>
                 </ul>
             </nav>
