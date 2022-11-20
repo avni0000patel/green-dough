@@ -54,55 +54,51 @@ const Login = (props) => {
 
     return (
         <div className="login" style={styles.login}>
-            <div className="card">
-                <div className="card-body">
-                    {data ? (
-                        <p>
-                            Success! You may now head{' '}
-                            <Link to="/">back to the homepage.</Link>
-                        </p>
-                    ) : (
-                        <form onSubmit={handleFormSubmit}>
-                            <input
-                                className="form-input"
-                                placeholder="Your email"
-                                name="email"
-                                type="email"
-                                value={formState.email}
-                                onChange={handleChange}
-                                required
-                            />
-                            <br />
-                            <br />
-                            <input
-                                className="form-input"
-                                placeholder="******"
-                                name="password"
-                                type="password"
-                                value={formState.password}
-                                onChange={handleChange}
-                                required
-                            />
-                            <br />
-                            <br />
-                            <button
-                                className="btn btn-block"
-                                style={styles.button}
-                                type="submit"
-                            >
-                                Submit
-                            </button>
-                        </form>
-                    )}
+            {data ? (
+                <p>
+                    Success! You may now head{' '}
+                    <Link to="/">back to the homepage.</Link>
+                </p>
+            ) : (
+                <form onSubmit={handleFormSubmit}>
+                    <input
+                        className="form-input"
+                        placeholder="Your email"
+                        name="email"
+                        type="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <br />
+                    <br />
+                    <input
+                        className="form-input"
+                        placeholder="******"
+                        name="password"
+                        type="password"
+                        value={formState.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <br />
+                    <br />
+                    <button
+                        className="btn btn-block"
+                        style={styles.button}
+                        type="submit"
+                    >
+                        Submit
+                    </button>
+                </form>
+            )}
 
-                    {error && (
-                        <div className="my-3 p-3 bg-danger text-white">
-                            {error.message}
-                        </div>
-                    )}
+            {error && (
+                <div className="my-3 p-3 bg-danger text-white">
+                    {error.message}
                 </div>
-            </div>
-        </div >
+            )}
+        </div>
     );
 };
 
