@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 
@@ -61,7 +63,7 @@ const Login = (props) => {
                 </p>
             ) : (
                 <form onSubmit={handleFormSubmit}>
-                    <input
+                    <Form.Control
                         className="form-input"
                         placeholder="Your email"
                         name="email"
@@ -71,17 +73,15 @@ const Login = (props) => {
                         required
                     />
                     <br />
-                    <br />
-                    <input
+                    <Form.Control
                         className="form-input"
-                        placeholder="******"
+                        placeholder="Your password"
                         name="password"
                         type="password"
                         value={formState.password}
                         onChange={handleChange}
                         required
                     />
-                    <br />
                     <br />
                     <button
                         className="btn btn-block"
