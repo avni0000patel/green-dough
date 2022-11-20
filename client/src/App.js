@@ -53,6 +53,8 @@ function App() {
           <>
             <Background />
             <Sidebar />
+            <Routes>
+            </Routes>
           </>
         ) : (
           <>
@@ -79,7 +81,7 @@ function App() {
           </>
         )}
       </Router>
-    </ApolloProvider>
+    </ApolloProvider >
   );
 }
 
