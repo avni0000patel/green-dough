@@ -15,5 +15,9 @@
     "license": "ISC",
     "devDependencies": {
         "concurrently": "^5.1.0"
+    },
+    "dependencies": {
+        "react-icons": "^4.6.0",
+        "react-pro-sidebar": "^1.0.0-alpha.7"
     }
 }
