@@ -15,11 +15,8 @@ import About from './components/Home/about';
 import Signup from './components/Home/signup';
 import Login from './components/Home/login';
 
-import Sidebar from './components/User/sidebar';
-
+import Sidebar from './components/Home/sidebar';
 import "./App.css";
-
-import Auth from "./utils/auth";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -49,37 +46,29 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        {Auth.loggedIn() ? (
-          <>
-            <Background />
-            <Sidebar />
-            <Routes>
-            </Routes>
-          </>
-        ) : (
-          <>
-            <Background />
-            <Nav />
-            <Routes>
-              <Route
-                path="/"
-                element={<Home />}
-              />
-              <Route
-                path="/about"
-                element={<About />}
-              />
-              <Route
-                path="/signup"
-                element={<Signup />}
-              />
-              <Route
-                path="/login"
-                element={<Login />}
-              />
-            </Routes>
-          </>
-        )}
+        <>
+          <Background />
+          <Sidebar />
+          {/* <Nav /> */}
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+            <Route
+              path="/about"
+              element={<About />}
+            />
+            <Route
+              path="/signup"
+              element={<Signup />}
+            />
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+          </Routes>
+        </>
       </Router>
     </ApolloProvider >
   );

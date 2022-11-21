@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 //react pro sidebar components
 import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter, SidebarContent } from "react-pro-sidebar";
 //icons from react icons
-import { FaList, FaRegHeart } from "react-icons/fa";
 import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 import { SiApacheairflow } from "react-icons/si";
 import { GiAbstract050 } from "react-icons/gi";
-//sidebar css from react-pro-sidebar module
+import Auth from "../../utils/auth";
 import "react-pro-sidebar/dist/css/styles.css";
+import './sidebar.css';
+
 const Sidenav = () => {
     //menuCollapse state using useState hook
     const [menuCollapse, setMenuCollapse] = useState(false)
@@ -37,25 +38,39 @@ const Sidenav = () => {
                             )}
                         </div>
                     </SidebarHeader>
-                    <SidebarContent>
-                        <Menu iconShape="square">
-                            <MenuItem active={true} icon={<FiHome />}>
-                                Home
-                            </MenuItem>
-                            <MenuItem icon={<FaList />}>Category</MenuItem>
-                            <MenuItem icon={<FaRegHeart />}>Favourite</MenuItem>
-                            <MenuItem icon={<RiPencilLine />}>Author</MenuItem>
-                            <MenuItem icon={<BiCog />}>Settings</MenuItem>
-                        </Menu>
-                    </SidebarContent>
-                    <SidebarFooter>
-                        <Menu iconShape="square">
-                            <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
-                        </Menu>
-                    </SidebarFooter>
+                    <Menu iconShape="square">
+                        {Auth.loggedIn() ? (
+                            <>
+                                <SidebarContent>
+                                    <Link to="/" active={true} icon={<FiHome />}>
+                                        Home
+                                    </Link>
+                                    <MenuItem icon={<BiCog />}>Settings</MenuItem>
+                                </SidebarContent>
+                                <SidebarFooter>
+                                    <Menu iconShape="square">
+                                        <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+                                    </Menu>
+                                </SidebarFooter>
+                            </>
+                        ) : (
+                            <>
+                                <MenuItem to="/" active={true} icon={<FiHome />}>
+                                    Home
+                                </MenuItem>
+                                <MenuItem to="/login" icon={<FiHome />}>
+                                    Login
+                                </MenuItem>
+                                <MenuItem to="/signup" icon={<FiHome />}>
+                                    Signup
+                                </MenuItem>
+                            </>
+                        )}
+                    </Menu>
                 </ProSidebar>
             </div>
         </>
     );
 }
-export default Sidenav
+
+export default Sidenav;
