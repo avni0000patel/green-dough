@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-//react pro sidebar components
 import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter, SidebarContent } from "react-pro-sidebar";
-//icons from react icons
 import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { BiCog } from "react-icons/bi";
 import { SiApacheairflow } from "react-icons/si";
@@ -12,25 +10,20 @@ import "react-pro-sidebar/dist/css/styles.css";
 import './sidebar.css';
 
 export default function Sidenav() {
-    //menuCollapse state using useState hook
-    const [menuCollapse, setMenuCollapse] = useState(false)
-    //custom function that will change menucollapse state from false to true and true to false
+    const [menuCollapse, setMenuCollapse] = useState(false);
     const menuIconClick = () => {
-        //condition checking to change state from true to false and vice versa
         menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
     };
+
     return (
         <>
             <div id="header">
-                {/* collapsed props to change menu size using menucollapse state */}
                 <ProSidebar collapsed={menuCollapse}>
                     <SidebarHeader>
                         <div className="logotext">
-                            {/* Icon change using menucollapse state */}
                             <p>{menuCollapse ? <GiAbstract050 /> : <SiApacheairflow />}</p>
                         </div>
                         <div className="closemenu" onClick={menuIconClick}>
-                            {/* changing menu collapse icon on click */}
                             {menuCollapse ? (
                                 <FiArrowRightCircle />
                             ) : (
@@ -42,9 +35,9 @@ export default function Sidenav() {
                         {Auth.loggedIn() ? (
                             <>
                                 <SidebarContent>
-                                    <MenuItem to="/" active={true} icon={<FiHome />}>
-                                        Home
-                                    </MenuItem>
+                                    <Link to='/' style={{ textDecoration: 'none' }}>
+                                        <MenuItem active={true} icon={<FiHome />}>Home</MenuItem>
+                                    </Link>
                                     <MenuItem icon={<BiCog />}>Settings</MenuItem>
                                 </SidebarContent>
                                 <SidebarFooter>
@@ -55,15 +48,17 @@ export default function Sidenav() {
                             </>
                         ) : (
                             <>
-                                <MenuItem to="/" active={true} icon={<FiHome />}>
-                                    Home
-                                </MenuItem>
-                                <MenuItem to="/login" icon={<FiHome />}>
-                                    Login
-                                </MenuItem>
-                                <MenuItem to="/signup" icon={<FiHome />}>
-                                    Signup
-                                </MenuItem>
+                                <SidebarContent>
+                                    <Link to='/' style={{ textDecoration: 'none' }}>
+                                        <MenuItem active={true} icon={<FiHome />}>Home</MenuItem>
+                                    </Link>
+                                    <Link to='/login' style={{ textDecoration: 'none' }}>
+                                        <MenuItem icon={<FiHome />}>Login</MenuItem>
+                                    </Link>
+                                    <Link to='/signup' style={{ textDecoration: 'none' }}>
+                                        <MenuItem icon={<FiHome />}>Signup</MenuItem>
+                                    </Link>
+                                </SidebarContent>
                             </>
                         )}
                     </Menu>
