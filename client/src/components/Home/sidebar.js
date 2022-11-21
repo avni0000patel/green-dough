@@ -11,7 +11,7 @@ import Auth from "../../utils/auth";
 import "react-pro-sidebar/dist/css/styles.css";
 import './sidebar.css';
 
-const Sidenav = () => {
+export default function Sidenav() {
     //menuCollapse state using useState hook
     const [menuCollapse, setMenuCollapse] = useState(false)
     //custom function that will change menucollapse state from false to true and true to false
@@ -42,9 +42,9 @@ const Sidenav = () => {
                         {Auth.loggedIn() ? (
                             <>
                                 <SidebarContent>
-                                    <Link to="/" active={true} icon={<FiHome />}>
+                                    <MenuItem to="/" active={true} icon={<FiHome />}>
                                         Home
-                                    </Link>
+                                    </MenuItem>
                                     <MenuItem icon={<BiCog />}>Settings</MenuItem>
                                 </SidebarContent>
                                 <SidebarFooter>
@@ -72,5 +72,3 @@ const Sidenav = () => {
         </>
     );
 }
-
-export default Sidenav;
