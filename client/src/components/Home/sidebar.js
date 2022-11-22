@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter, SidebarContent } from "react-pro-sidebar";
-import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-// import { BiCog } from "react-icons/bi";
-// import { SiApacheairflow } from "react-icons/si";
-// import { GiAbstract050 } from "react-icons/gi";
-// import Auth from "../../utils/auth";
+import { FiHome, FiLogOut } from "react-icons/fi";
 import "react-pro-sidebar/dist/css/styles.css";
 import './sidebar.css';
 
 function Sidebar() {
 
-    const [menuCollapse, setMenuCollapse] = useState(false);
     const [activeIndex, setActiveIndex] = useState(() => {
         const initialIndex =
             window.location.pathname === '/' ? 0
@@ -21,27 +16,14 @@ function Sidebar() {
         return initialIndex;
     });
 
-    const menuIconClick = () => {
-        setMenuCollapse(!menuCollapse);
-    };
-
     return (
         <>
             <div id="header">
                 {/* collapsed props to change menu size using menucollapse state */}
-                <ProSidebar collapsed={menuCollapse}>
+                <ProSidebar>
                     <SidebarHeader>
                         <div className="logotext">
-                            {/* small and big change using menucollapse state */}
-                            <p>{menuCollapse ? "GD" : "Green Dough"}</p>
-                        </div>
-                        <div className="closemenu" onClick={menuIconClick}>
-                            {/* changing menu collapse icon on click */}
-                            {menuCollapse ? (
-                                <FiArrowRightCircle />
-                            ) : (
-                                <FiArrowLeftCircle />
-                            )}
+                            <p>Green Dough</p>
                         </div>
                     </SidebarHeader>
                     <SidebarContent>

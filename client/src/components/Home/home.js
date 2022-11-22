@@ -14,6 +14,9 @@ export default function Home() {
       alignItems: 'center',
       padding: '5rem 3rem',
       marginBottom: '20px',
+      float: 'right',
+      width: 'calc(100% - 240px)',
+      marginRight: '10px',
     },
     hero: {
       display: 'flex',

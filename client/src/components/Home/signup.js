@@ -11,6 +11,9 @@ const Signup = () => {
     const styles = {
         signup: {
             padding: '2rem 2rem',
+            float: 'right',
+            width: 'calc(100% - 240px)',
+            marginRight: '10px',
         },
         label: {
             color: 'white',
