@@ -2,7 +2,7 @@
     background: #370799;
     background: -webkit-linear-gradient(to left, #8f94fb, #370799);
     width: 100%;
-    min-Height: 100vh;
+    height: 100vh;
     position: fixed;
     z-Index: -1;
 }

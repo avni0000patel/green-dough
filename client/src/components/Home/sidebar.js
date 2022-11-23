@@ -18,7 +18,7 @@ function Sidebar() {
 
     return (
         <>
-            <div id="header">
+            <div className="sidebar" id="header">
                 {/* collapsed props to change menu size using menucollapse state */}
                 <ProSidebar>
                     <SidebarHeader>
