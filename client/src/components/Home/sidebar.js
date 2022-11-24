@@ -30,7 +30,7 @@ function Sidebar() {
                 <ProSidebar>
                     <SidebarHeader>
                         <div className="logotext">
-                            <p>Green Dough</p>
+                            Green Dough
                         </div>
                     </SidebarHeader>
                     {Auth.loggedIn() ? (

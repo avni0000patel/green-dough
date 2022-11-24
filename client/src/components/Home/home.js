@@ -36,12 +36,6 @@ export default function Home() {
     green: {
       color: 'green',
     },
-    top: {
-
-    },
-    heading: {
-      color: '',
-    },
     signupBtn: {
       color: '#5d0cff',
       background: 'white',
