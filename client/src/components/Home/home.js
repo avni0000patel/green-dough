@@ -13,6 +13,7 @@ export default function Home() {
       display: 'flex',
       alignItems: 'center',
       padding: '5rem 3rem',
+      marginTop: '20px',
       marginBottom: '20px',
       float: 'right',
       width: 'calc(100% - 240px)',
