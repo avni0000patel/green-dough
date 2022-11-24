@@ -1,8 +1,10 @@
 #header {
-    position: absolute;
+    position: fixed;
     width: 220px;
     height: 100vh;
     background-color: white;
+    overflow: hidden;
+    z-Index: -1;
 }
 
 #header .closemenu {
@@ -51,7 +53,7 @@
 }
 
 #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
-    color: rgb(212, 212, 212);
+    color: black;
     margin: 10px 0px;
     font-weight: bold;
 }
