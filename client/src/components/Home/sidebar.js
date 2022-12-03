@@ -23,6 +23,12 @@ function Sidebar() {
         Auth.logout();
     };
 
+    const [file, setFile] = useState();
+    function handleChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+    }
+
     return (
         <>
             <div className="sidebar" id="header">
@@ -35,6 +41,10 @@ function Sidebar() {
                     </SidebarHeader>
                     {Auth.loggedIn() ? (
                         <>
+                            <div className="App">
+                                <img src={file} alt="" width={80} height={80} />
+                                <input type="file" onChange={handleChange} />
+                            </div>
                             <SidebarContent>
                                 <Menu iconShape="square">
                                     <MenuItem icon={<FiLogOut />}>
