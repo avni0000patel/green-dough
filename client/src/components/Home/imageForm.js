@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_IMAGE } from '../utils/mutations';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { ADD_IMAGE } from '../../utils/mutations';
+import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../utils/auth';
 
@@ -14,6 +14,7 @@ const ImageForm = () => {
             background: 'linear-gradient(90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%) ',
         }
     }
+
     const [image, setImage] = useState('');
 
     const [addImage, { error }] = useMutation(ADD_IMAGE, {
