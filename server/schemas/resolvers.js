@@ -47,7 +47,37 @@ const resolvers = {
             const token = signToken(user);
 
             return { token, user };
-        }
+        },
+        addProfile: async (parent, { image }, context) => {
+            if (context.user) {
+                const profile = await Profile.create({
+                    image,
+                });
+
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { profiles: profile._id } }
+                );
+
+                return profile;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        removeProfile: async (parent, { profileId }, context) => {
+            if (context.user) {
+                const profile = await Profile.findOneAndDelete({
+                    _id: profileId,
+                });
+
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { profiles: profile._id } }
+                );
+
+                return profile;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
     },
 };
 
