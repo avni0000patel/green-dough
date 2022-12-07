@@ -22,6 +22,8 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
+    profiles(username: String): [Profile]
+    profile(profileId: ID!): Profile
     me: User
   }
 
