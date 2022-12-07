@@ -19,6 +19,15 @@ const userSchema = new Schema({
         required: true,
         minlength: 5,
     },
+    name: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+    },
+    image: {
+        type: String,
+    }
 });
 
 userSchema.pre('save', async function (next) {
