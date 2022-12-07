@@ -28,7 +28,7 @@ export const ADD_IMAGE = gql`
   mutation addImage($userId: ID!, $image: String!) {
     addImage(userId: $userId, image: $image) {
       _id
-      name
+      username
       images
     }
   }
@@ -38,7 +38,7 @@ export const REMOVE_IMAGE = gql`
   mutation removeImage($image: String!) {
     removeImage(image: $image) {
       _id
-      name
+      username
       images
     }
   }
