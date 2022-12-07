@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Profile } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -9,6 +9,13 @@ const resolvers = {
         },
         user: async (parent, { username }) => {
             return User.findOne({ username });
+        },
+        profiles: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Profile.find(params);
+        },
+        profile: async (parent, { profileId }) => {
+            return Profile.findOne({ _id: profileId });
         },
         me: async (parent, args, context) => {
             if (context.user) {
