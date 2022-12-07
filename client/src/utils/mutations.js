@@ -23,23 +23,3 @@ export const ADD_USER = gql`
     }
   }
 `;
-
-export const ADD_IMAGE = gql`
-  mutation addImage($userId: ID!, $image: String!) {
-    addImage(userId: $userId, image: $image) {
-      _id
-      username
-      image
-    }
-  }
-`;
-
-export const REMOVE_IMAGE = gql`
-  mutation removeImage($image: String!) {
-    removeImage(image: $image) {
-      _id
-      username
-      image
-    }
-  }
-`;

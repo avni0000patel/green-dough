@@ -40,40 +40,8 @@ const resolvers = {
             const token = signToken(user);
 
             return { token, user };
-        },
-        addImage: async (parent, { userId, image }, context) => {
-            if (context.user) {
-                return User.findOneAndUpdate(
-                    { _id: userId },
-                    {
-                        $addToSet: { images: image },
-                    },
-                    {
-                        new: true,
-                        runValidators: true,
-                    }
-                );
-            }
-            throw new AuthenticationError('You need to be logged in!');
-        },
-        removeUser: async (parent, args, context) => {
-            if (context.user) {
-                return User.findOneAndDelete({ _id: context.user._id });
-            }
-            throw new AuthenticationError('You need to be logged in!');
-        },
-        removeImage: async (parent, { image }, context) => {
-            if (context.user) {
-                return User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $pull: { images: image } },
-                    { new: true }
-                );
-            }
-            throw new AuthenticationError('You need to be logged in!');
-        },
+        }
     },
-},
 };
 
 module.exports = resolvers;
