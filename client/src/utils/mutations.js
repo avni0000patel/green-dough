@@ -23,3 +23,12 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_PROFILE = gql`
+  mutation addProfile($image: String!) {
+    addProfile(image: $image) {
+      _id
+      image
+    }
+  }
+`;
