@@ -29,7 +29,7 @@ export const ADD_IMAGE = gql`
     addImage(userId: $userId, image: $image) {
       _id
       username
-      images
+      image
     }
   }
 `;
@@ -39,7 +39,7 @@ export const REMOVE_IMAGE = gql`
     removeImage(image: $image) {
       _id
       username
-      images
+      image
     }
   }
 `;
