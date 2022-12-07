@@ -2,6 +2,8 @@
     {
         "username": "Avni Patel",
         "email": "avnipatel@example.org",
-        "password": "password01"
+        "password": "password01",
+        "name": "Avni Patel",
+        "image": "",
     }
 ]
