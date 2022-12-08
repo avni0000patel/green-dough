@@ -5,6 +5,7 @@ import { FiHome, FiLogOut } from "react-icons/fi";
 import "react-pro-sidebar/dist/css/styles.css";
 import './sidebar.css';
 import Auth from "../../utils/auth";
+import ProfileForm from './profileForm';
 
 function Sidebar() {
 
@@ -23,12 +24,6 @@ function Sidebar() {
         Auth.logout();
     };
 
-    const [file, setFile] = useState();
-    function handleChange(e) {
-        console.log(e.target.files);
-        setFile(URL.createObjectURL(e.target.files[0]));
-    }
-
     return (
         <>
             <div className="sidebar" id="header">
@@ -41,10 +36,7 @@ function Sidebar() {
                     </SidebarHeader>
                     {Auth.loggedIn() ? (
                         <>
-                            <div className="App">
-                                <img src={file} alt="" width={80} height={80} />
-                                <input type="file" onChange={handleChange} />
-                            </div>
+                            <ProfileForm />
                             <SidebarContent>
                                 <Menu iconShape="square">
                                     <MenuItem icon={<FiLogOut />}>
