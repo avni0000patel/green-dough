@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
-import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter, SidebarContent } from "react-pro-sidebar";
+import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarContent } from "react-pro-sidebar";
 import { FiHome, FiLogOut } from "react-icons/fi";
 import "react-pro-sidebar/dist/css/styles.css";
 import './sidebar.css';
 import Auth from "../../utils/auth";
 import ProfileForm from './profileForm';
+import ProfileList from './profileList';
+
+import { QUERY_PROFILES } from '../../utils/queries';
 
 function Sidebar() {
 
@@ -18,11 +22,13 @@ function Sidebar() {
         return initialIndex;
     });
 
-
     const logout = (event) => {
         event.preventDefault();
         Auth.logout();
     };
+
+    const { loading, data } = useQuery(QUERY_PROFILES);
+    const profiles = data?.profiles || [];
 
     return (
         <>
@@ -36,6 +42,13 @@ function Sidebar() {
                     </SidebarHeader>
                     {Auth.loggedIn() ? (
                         <>
+                            {loading ? (
+                                <div>Loading...</div>
+                            ) : (
+                                <ProfileList
+                                    profiles={profiles}
+                                />
+                            )}
                             <ProfileForm />
                             <SidebarContent>
                                 <Menu iconShape="square">

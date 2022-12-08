@@ -7,8 +7,7 @@ import { QUERY_PROFILES, QUERY_ME } from '../../utils/queries';
 const ProfileForm = () => {
     const styles = {
         add__image__button: {
-            color: 'white',
-            background: 'linear-gradient(90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%) ',
+            border: '1px solid black'
         }
     }
 
@@ -62,24 +61,19 @@ const ProfileForm = () => {
     };
 
     return (
-        <div><h1 className='head'>Create Image</h1>
+        <div>
             <form
                 className="flex-row justify-center justify-space-between-md align-center"
                 onSubmit={handleFormSubmit}
             >
-                <div className="col-12 col-lg-9">
-                    <img src={image} alt="" width={80} height={80} />
-                    <input
-                        type="file"
-                        onChange={handlePhoto}
-                    ></input>
-                </div>
-
-                <div className="col-12 col-lg-3">
-                    <button className="add__image__button btn" style={styles.add__image__button} type="submit">
-                        Upload Image
-                    </button>
-                </div>
+                <img src={image} alt="" width={80} height={80} />
+                <input
+                    type="file"
+                    onChange={handlePhoto}>
+                </input>
+                <button type="submit" style={styles.add__image__button}>
+                    Upload Image
+                </button>
             </form>
         </div>
     );
