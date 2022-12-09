@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <div>
       <div className="container flex-row justify-center" style={styles.container}>
-        < div className="hero col-12 col-md-4" style={styles.hero} >
+        <div className="hero col-12 col-md-4" style={styles.hero} >
           <img className="homeImg rounded-circle img-thumbnail" style={styles.homeImg} src={hero} alt="sending money" />
         </div >
         <div className="description col-12 col-md-8" style={styles.description}>

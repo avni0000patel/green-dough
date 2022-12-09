@@ -8,7 +8,20 @@ const ProfileForm = () => {
     const styles = {
         add__image__button: {
             border: '1px solid black'
-        }
+        },
+        container: {
+            background: 'linear-gradient(90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%)',
+            borderRadius: '2.5rem',
+            boxShadow: '15px 15px 15px rgba(46, 54, 68, 0.4)',
+            display: 'flex',
+            alignItems: 'center',
+            padding: '5rem 3rem',
+            marginTop: '20px',
+            marginBottom: '20px',
+            float: 'right',
+            width: 'calc(100% - 240px)',
+            marginRight: '10px',
+        },
     }
 
     const [image, setImage] = useState('');
@@ -61,9 +74,9 @@ const ProfileForm = () => {
     };
 
     return (
-        <div>
+        <div className="container flex-column justify-center" style={styles.container}>
             <form
-                className="flex-row justify-center justify-space-between-md align-center"
+                className=""
                 onSubmit={handleFormSubmit}
             >
                 <img src={image} alt="" width={80} height={80} />

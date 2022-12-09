@@ -6,7 +6,7 @@ import { FiHome, FiLogOut } from "react-icons/fi";
 import "react-pro-sidebar/dist/css/styles.css";
 import './sidebar.css';
 import Auth from "../../utils/auth";
-import ProfileForm from './profileForm';
+// import ProfileForm from './profileForm';
 import ProfileList from './profileList';
 
 import { QUERY_PROFILES } from '../../utils/queries';
@@ -50,7 +50,12 @@ function Sidebar() {
                                         profiles={profiles}
                                     />
                                 )}
-                                <ProfileForm />
+                                <Link
+                                    to="/profile"
+                                >
+                                    Edit Profile
+                                </Link>
+                                {/* <ProfileForm /> */}
                             </div>
                             <SidebarContent>
                                 <Menu iconShape="square">
