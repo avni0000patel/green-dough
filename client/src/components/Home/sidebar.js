@@ -42,14 +42,16 @@ function Sidebar() {
                     </SidebarHeader>
                     {Auth.loggedIn() ? (
                         <>
-                            {loading ? (
-                                <div>Loading...</div>
-                            ) : (
-                                <ProfileList
-                                    profiles={profiles}
-                                />
-                            )}
-                            <ProfileForm />
+                            <div className="profile">
+                                {loading ? (
+                                    <div>Loading...</div>
+                                ) : (
+                                    <ProfileList
+                                        profiles={profiles}
+                                    />
+                                )}
+                                <ProfileForm />
+                            </div>
                             <SidebarContent>
                                 <Menu iconShape="square">
                                     <MenuItem icon={<FiLogOut />}>
