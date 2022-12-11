@@ -4,6 +4,8 @@ import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../../utils/mutations';
 import { QUERY_PROFILES, QUERY_ME } from '../../utils/queries';
 
+import './profileForm.css';
+
 const ProfileForm = () => {
     const styles = {
         add__image__button: {
@@ -76,19 +78,20 @@ const ProfileForm = () => {
     return (
         <div className="container flex-column justify-center" style={styles.container}>
             <form
-                className=""
+                className="avatar-upload"
                 onSubmit={handleFormSubmit}
             >
-                <img src={image} alt="" width={80} height={80} />
-                <input
-                    type="file"
-                    onChange={handlePhoto}>
-                </input>
+                <div class="avatar-edit">
+                    <input type="file" className="imageUpload" onChange={handlePhoto} accept=".png, .jpg, .jpeg" />
+                </div>
+                <div className="avatar-preview">
+                    <img className="imagePreview" alt="" src={image} />
+                </div>
                 <button type="submit" style={styles.add__image__button}>
                     Upload Image
                 </button>
-            </form>
-        </div>
+            </form >
+        </div >
     );
 };
 
