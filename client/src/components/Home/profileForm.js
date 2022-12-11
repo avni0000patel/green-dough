@@ -85,7 +85,8 @@ const ProfileForm = () => {
                     <input type="file" className="imageUpload" onChange={handlePhoto} accept=".png, .jpg, .jpeg" />
                 </div>
                 <div className="avatar-preview">
-                    <img className="imagePreview" alt="" src={image} />
+                    <img className="imagePreview" alt="" src={image}
+                        style={{ backgroundImage: `url("https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png")` }} />
                 </div>
                 <button className="uploadImage" type="submit" style={styles.add__image__button}>
                     Upload
