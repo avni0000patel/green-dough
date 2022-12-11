@@ -81,14 +81,14 @@ const ProfileForm = () => {
                 className="avatar-upload"
                 onSubmit={handleFormSubmit}
             >
-                <div class="avatar-edit">
+                <div className="avatar-edit">
                     <input type="file" className="imageUpload" onChange={handlePhoto} accept=".png, .jpg, .jpeg" />
                 </div>
                 <div className="avatar-preview">
                     <img className="imagePreview" alt="" src={image} />
                 </div>
-                <button type="submit" style={styles.add__image__button}>
-                    Upload Image
+                <button className="uploadImage" type="submit" style={styles.add__image__button}>
+                    Upload
                 </button>
             </form >
         </div >
