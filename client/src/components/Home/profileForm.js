@@ -82,7 +82,7 @@ const ProfileForm = () => {
                 onSubmit={handleFormSubmit}
             >
                 <div className="avatar-edit">
-                    <input type="file" className="imageUpload" onChange={handlePhoto} accept=".png, .jpg, .jpeg" />
+                    <input id="imageUpload" type="file" className="imageUpload" onChange={handlePhoto} accept=".png, .jpg, .jpeg" />
                 </div>
                 <div className="avatar-preview">
                     <img className="imagePreview" alt="" src={image}
