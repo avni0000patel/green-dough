@@ -6,13 +6,12 @@ import { FiHome, FiLogOut } from "react-icons/fi";
 import "react-pro-sidebar/dist/css/styles.css";
 import './sidebar.css';
 import Auth from "../../utils/auth";
-// import ProfileForm from './profileForm';
 import ProfileList from './profileList';
+import { FiEdit } from "react-icons/fi";
 
 import { QUERY_PROFILES } from '../../utils/queries';
 
 function Sidebar() {
-
     const [activeIndex, setActiveIndex] = useState(() => {
         const initialIndex =
             window.location.pathname === '/' ? 0
@@ -53,9 +52,8 @@ function Sidebar() {
                                 <Link
                                     to="/profile"
                                 >
-                                    Edit Profile
+                                    <FiEdit className='icons' />
                                 </Link>
-                                {/* <ProfileForm /> */}
                             </div>
                             <SidebarContent>
                                 <Menu iconShape="square">
