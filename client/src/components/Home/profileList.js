@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PostList = ({
+const ProfileList = ({
     profiles,
 }) => {
 
@@ -20,4 +20,4 @@ const PostList = ({
     );
 };
 
-export default PostList;
+export default ProfileList;
